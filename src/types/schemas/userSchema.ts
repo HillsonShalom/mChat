@@ -5,18 +5,16 @@ interface userDocument extends Document, IUser {}
 
 export const userSchema = new Schema<userDocument>({
     username: {
-        type: String
+        type: String,
+        required: true
     },
     password: {
-        type: String
+        type: String,
+        required: true
     },
     chats: {
-        type: [{
-            chat: {
-                type: Schema.Types.ObjectId,
-                ref: 'Chat'
-            }
-        }],
+        type: [Schema.Types.ObjectId],
+        ref: 'Chat',
         default: []
     },
     contacts: {
