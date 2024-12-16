@@ -1,9 +1,9 @@
 import { Types } from "mongoose"
-import { Token } from "./Tokem.model"
+import { userDocument } from "../schemas/userSchema"
 
 declare module 'express' {
     interface Request {
-        user?: Token
+        user?: userDocument
     }
 }
 

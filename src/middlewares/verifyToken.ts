@@ -20,7 +20,7 @@ const verifyToken = async (req: Request, res: Response, next: NextFunction) => {
     const user = await UserModel.findById(verified.user);
     if (!user) throw new Error("Wrong token content");
 
-    req.user = { user };
+    req.user = user;
 
     next();
   } catch (err) {
