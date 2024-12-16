@@ -5,7 +5,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=dev nodemon --exec ts-node src/app.ts",
-    "dev:reset": "ts-node src/dbconfig/drop-db.ts",
     "prd": "cross-env NODE_ENV=prd ts-node src/app.ts",
     "start": "cross-env NODE_ENV=prd node dist/app.js",
     "build": "tsc"
@@ -15,6 +14,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
@@ -24,6 +24,7 @@
     "socket.io": "^4.8.1"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.0",

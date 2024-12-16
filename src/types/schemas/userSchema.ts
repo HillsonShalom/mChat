@@ -26,7 +26,8 @@ export const userSchema = new Schema<userDocument>({
             nickname: {
                 type: String
             }
-        }]
+        }],
+        default: []
     },
     photoUrl: {
         type: String

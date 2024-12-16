@@ -5,7 +5,6 @@ import IChat from "./chatModel";
 
 interface IMessage {
     author: Types.ObjectId | IUser;
-    chat: IChat | Types.ObjectId
     createdAt: Date;
     updatedAt: Date;
     status: MsgStatus;

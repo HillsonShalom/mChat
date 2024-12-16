@@ -9,16 +9,11 @@ export const messageSchema = new Schema<messageDocument>({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    chat: {
-        type: Schema.Types.ObjectId,
-        ref: 'Chat'
-    },
     status: {
         type: String,
         enum: Object.keys(MsgStatus),
         default: MsgStatus.IDLE
     },
-
     content: {
         type: String
     },

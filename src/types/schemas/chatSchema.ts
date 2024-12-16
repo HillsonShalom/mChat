@@ -10,6 +10,15 @@ export const chatSchema = new Schema<chatDocument>(
       ref: "User",
       default: [],
     },
+    messages: {
+      type: [Schema.Types.ObjectId],
+      ref: 'Message',
+      default: []
+    },
+    group: {
+      type: Schema.Types.ObjectId,
+      ref: 'Group'
+    }
   },
   { timestamps: true }
 );
