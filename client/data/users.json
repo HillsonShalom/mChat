@@ -1,0 +1,14 @@
+[
+    {
+        "id": "1111",
+        "username": "shalom",
+        "contacts": [],
+        "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/1200px-Donald_Trump_official_portrait.jpg"
+    },
+    {
+        "id": "2222",
+        "username": "miriam",
+        "contacts": [],
+        "photoUrl": "https://res.cloudinary.com/globes/image/upload/t_1600X784,f_auto/v1701936683/direct/2023-12-02T164133Z_1252004916_RC24P4AAW8O2_RTRMADP_3_ISRAEL-PALESTINIANS-HARRIS_ouqbrt.jpg"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1234",
+        "author": "1111",
+        "createdAt": "",
+        "updatedAt": "",
+        "status": "IDLE",
+
+        "content": "hello world",
+        "likes": [{"from": "2222", "symbol": "like"}]
+    },
+    {
+        "id": "1234",
+        "author": "1111",
+        "createdAt": "",
+        "updatedAt": "",
+        "status": "IDLE",
+
+        "content": "hello there",
+        "likes": [{"from": "2222", "symbol": "like"}]
+    },
+    {
+        "id": "1234",
+        "author": "1111",
+        "createdAt": "",
+        "updatedAt": "",
+        "status": "IDLE",
+
+        "content": "hello world",
+        "likes": [{"from": "2222", "symbol": "like"}]
+    }
+]
