@@ -1,18 +1,23 @@
-import exp from 'express'
-import cors from 'cors'
-import dotenv from 'dotenv'
+import exp from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import dbConnect from "./dbconfig/dbConnection";
 dotenv.config({
-    path: './.env'
+  path: "./.env",
 });
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT;
 
-const app = exp()
-app.use(cors())
-app.use(exp.json())
+dbConnect();
 
-app.get('/', (q,s)=>{s.send("hello mchat")})
+const app = exp();
+app.use(cors());
+app.use(exp.json());
 
-app.listen(PORT, ()=>{
-    console.log(`Listening at http://localhost:${PORT}`);
-})
+app.get("/", (q, s) => {
+  s.send("hello mchat");
+});
+
+app.listen(PORT, () => {
+  console.log(`Listening at http://localhost:${PORT}`);
+});
