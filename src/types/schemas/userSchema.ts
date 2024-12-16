@@ -10,6 +10,15 @@ export const userSchema = new Schema<userDocument>({
     password: {
         type: String
     },
+    chats: {
+        type: [{
+            chat: {
+                type: Schema.Types.ObjectId,
+                ref: 'Chat'
+            }
+        }],
+        default: []
+    },
     contacts: {
         type: [{
             user: {

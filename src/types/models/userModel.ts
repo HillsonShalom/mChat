@@ -1,12 +1,16 @@
-import { ObjectId, Types } from "mongoose";
+import { Types } from "mongoose";
+import IChat from "./chatModel";
 
 interface IUser {
     username: string;
     password: string;
     contacts: {
-        user: ObjectId | IUser;
+        user: Types.ObjectId | IUser;
         nickname: string;
     }[];
+    chats: {
+        chat: Types.ObjectId | IChat
+    }[]
     
     photoUrl?: string;
 }
