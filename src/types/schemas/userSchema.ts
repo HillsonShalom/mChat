@@ -8,7 +8,8 @@ export interface userDocument extends Document, IUser {
 export const userSchema = new Schema<userDocument>({
     username: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
@@ -17,18 +18,6 @@ export const userSchema = new Schema<userDocument>({
     chats: {
         type: [Schema.Types.ObjectId],
         ref: 'Chat',
-        default: []
-    },
-    contacts: {
-        type: [{
-            user: {
-                type: Schema.ObjectId,
-                ref: 'User',
-            },
-            nickname: {
-                type: String
-            }
-        }],
         default: []
     },
     photoUrl: {

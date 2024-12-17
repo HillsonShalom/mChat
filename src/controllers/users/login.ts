@@ -12,12 +12,9 @@ const login = async (req: Request<any, any, loginDTO>, res: Response) => {
     if (!username || !password)
       throw new AppResError(400, "complete all fields!");
 
-    const users = await UserModel.find({ username });
-    if (!users.length) throw new AppResError(404, "user not found!");
-    const user = users.find(
-      async (u) => await bcrypt.compare(password, u.password)
-    );
-    if (!user) throw new AppResError(404, "wrong password!");
+    const user = await UserModel.findOne({ username });
+    if (!user) throw new AppResError(404, "user not found!");
+    if (!(await bcrypt.compare(password, user.password))) throw new AppResError(404, "wrong password!");
 
     const token = jwt.sign({ user: user._id }, AppEnv.SECRET_KEY, {
       expiresIn: "30d",

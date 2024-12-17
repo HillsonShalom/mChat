@@ -1,4 +1,4 @@
-import Emoji from "../models/emoji";
+import Emoji from "../emoji";
 
 export interface createChat {
   partnerId: string;
