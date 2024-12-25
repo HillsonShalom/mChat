@@ -11,11 +11,12 @@ import {
 } from "@mui/material";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import { useAppSelector } from "../store/store";
 
 const drawerWidth = 240;
-const navArray = ["Inbox", "Starred", "Send email", "Drafts"];
 
 const NavBar = () => {
+  const chats = useAppSelector(s => s.user.user?.chats)
   return (
     <Drawer
       sx={{
@@ -36,13 +37,15 @@ const NavBar = () => {
       </AppBar>
 
       <List>
-        {navArray.map((text, index) => (
-          <ListItem key={text} disablePadding>
+        {chats && chats.map((chat, index) => (
+          <ListItem key={chat.id} disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
+              {chat.name}
             </ListItemButton>
+            {}
           </ListItem>
         ))}
       </List>
